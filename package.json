@@ -1,4 +1,10 @@
 {
+    "name": "kylir-pancakes",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "mocha": "5.2.0"
+    },
     "scripts": {
         "test": "mocha"
     }
