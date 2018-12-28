@@ -4,6 +4,7 @@ const SADCAKE = '-';
 class PancakeStack {
     constructor(pancakes) {
         this._pancakes = Array.from(pancakes);
+        this.flips = 0;
     }
 
     toString() {
@@ -20,6 +21,11 @@ class PancakeStack {
         }
 
         this._pancakes.splice(0, topStack.length, ...topStack);
+        this.flips++;
+    }
+
+    makeHappy() {
+        // TODO: Implement flipping pancakes to all happy algorithm here.
     }
 }
 
