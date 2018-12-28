@@ -57,5 +57,68 @@ describe('PancakeStack', function() {
             assert.equal(pancakeStack, '+++');
             assert.equal(pancakeStack.flips, 0);
         });
+
+        it('can make a single unhappy pancake happy in 1 move', function() {
+            let pancakeStack = new PancakeStack('-');
+            pancakeStack.makeHappy();
+            assert.equal(pancakeStack.flips, 1);
+            assert.equal(pancakeStack, '+');
+        });
+
+        it('can make "-+" pancakes happy in 1 move', function() {
+            let pancakeStack = new PancakeStack('-+');
+            pancakeStack.makeHappy();
+            assert.equal(pancakeStack.flips, 1);
+            assert.equal(pancakeStack, '++');
+        });
+
+        it('can make "+-" pancakes happy in 2 moves', function() {
+            let pancakeStack = new PancakeStack('+-');
+            pancakeStack.makeHappy();
+            assert.equal(pancakeStack.flips, 2);
+            assert.equal(pancakeStack, '++');
+        });
+
+        it('can make "---" pancakes happy in 1 move', function() {
+            let pancakeStack = new PancakeStack('---');
+            pancakeStack.makeHappy();
+            assert.equal(pancakeStack.flips, 1);
+            assert.equal(pancakeStack, '+++');
+        });
+
+        it('can make "--+-" pancakes happy in 3 moves', function() {
+            let pancakeStack = new PancakeStack('--+-');
+            pancakeStack.makeHappy();
+            assert.equal(pancakeStack.flips, 3);
+            assert.equal(pancakeStack, '++++');
+        });
+
+        it('can make "+--+" pancakes happy in 2 moves', function() {
+            let pancakeStack = new PancakeStack('+--+');
+            pancakeStack.makeHappy();
+            assert.equal(pancakeStack.flips, 2);
+            assert.equal(pancakeStack, '++++');
+        });
+
+        it('can make "+---" pancakes happy in 2 moves', function() {
+            let pancakeStack = new PancakeStack('+---');
+            pancakeStack.makeHappy();
+            assert.equal(pancakeStack.flips, 2);
+            assert.equal(pancakeStack, '++++');
+        });
+
+        it('can make "+--+-+" pancakes happy in 4 moves', function() {
+            let pancakeStack = new PancakeStack('+--+-++');
+            pancakeStack.makeHappy();
+            assert.equal(pancakeStack.flips, 4);
+            assert.equal(pancakeStack, '+++++++');
+        });
+
+        it('can make "+--+-++++" pancakes happy in 4 moves', function() {
+            let pancakeStack = new PancakeStack('+--+-++++');
+            pancakeStack.makeHappy();
+            assert.equal(pancakeStack.flips, 4);
+            assert.equal(pancakeStack, '+++++++++');
+        });
     });
 });
