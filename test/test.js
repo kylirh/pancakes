@@ -1,9 +1,10 @@
-var assert = require('assert');
+const assert = require('assert');
+const PancakeStack = require('../PancakeStack');
 
-describe('Array', function() {
-  describe('#indexOf()', function() {
-    it('should return -1 when the value is not present', function() {
-      assert.equal([1,2,3].indexOf(4), -1);
+describe('PancakeStack', function() {
+    it('can return its state as a string', function() {
+        let initialState = '+--+-+';
+        let pancakeStack = new PancakeStack(initialState);
+        assert.equal(initialState, pancakeStack.toString());
     });
-  });
 });
