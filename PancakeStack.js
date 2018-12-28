@@ -10,12 +10,16 @@ class PancakeStack {
         return this._pancakes.join('');
     }
 
-    flip() {
-        this._pancakes.reverse();
-        for (let index in this._pancakes) {
-            let isHappyCake = (this._pancakes[index] == HAPPYCAKE);
-            this._pancakes[index] = isHappyCake ? SADCAKE : HAPPYCAKE;
+    flipAt(index) {
+        let topStack = this._pancakes.slice(0, index + 1);
+        topStack.reverse();
+
+        for (let i in topStack) {
+            let isHappyCake = (topStack[i] == HAPPYCAKE);
+            topStack[i] = isHappyCake ? SADCAKE : HAPPYCAKE;
         }
+
+        this._pancakes.splice(0, topStack.length, ...topStack);
     }
 }
 

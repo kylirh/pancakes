@@ -14,7 +14,17 @@ describe('PancakeStack', function() {
     });
 
     it('can flip a stack of pancakes', function() {
-        pancakeStack.flip();
+        pancakeStack.flipAt(5);
         assert.equal(pancakeStack, '-+-++-');
+    });
+
+    it('can flip the top pancake', function() {
+        pancakeStack.flipAt(0);
+        assert.equal(pancakeStack, '---+-+');
+    });
+
+    it('can flip any pancake', function() {
+        pancakeStack.flipAt(2);
+        assert.equal(pancakeStack, '++-+-+');
     });
 });
