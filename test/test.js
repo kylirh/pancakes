@@ -120,5 +120,11 @@ describe('PancakeStack', function() {
             assert.equal(pancakeStack.flips, 4);
             assert.equal(pancakeStack, '+++++++++');
         });
+
+        it('can make a Paul Bunyan amount of pancakes happy in 32 moves', function() {
+            let pancakeStack = new PancakeStack('+--+-++--++-+----+-+---+++++++++----+-+-++--+++---+-+++---+--+-');
+            pancakeStack.makeHappy();
+            assert.equal(pancakeStack.flips, 32);
+        });
     });
 });
